@@ -6,7 +6,7 @@ class TopBar extends React.Component {
   render() {
     return (
       <div className={styles.topbar}>
-        <div className="ml-4">
+        <div className="ml-auto">
           <ProfileMenu />
         </div>
       </div>
