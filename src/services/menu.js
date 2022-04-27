@@ -4,7 +4,7 @@ export async function getLeftMenuData() {
       title: 'Dashboard',
       key: 'dashboard',
       url: '/dashboard',
-      icon: 'fas fa-burger-soda fa-lg',
+      icon: 'fas fa-columns fa-lg',
       hide: false,
       roles: ['employee'],
     },
@@ -16,7 +16,7 @@ export async function getTopMenuData() {
       title: 'Dashboard',
       key: 'dashboard',
       url: '/dashboard',
-      icon: 'fas fa-burger-soda fa-lg',
+      icon: 'fas fa-columns fa-lg',
       roles: ['employee'],
     },
   ];
