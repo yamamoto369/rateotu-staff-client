@@ -23,7 +23,7 @@ const publicRoutes = [
     exact: true,
     roles: ['customer', 'employee', 'anonymous'],
   },
-  {
+  /* {
     path: '/accounts/register',
     component: loadable(() => import('pages/accounts/register')),
     exact: true,
@@ -52,7 +52,7 @@ const publicRoutes = [
     component: loadable(() => import('pages/accounts/password/reset/confirm')),
     exact: true,
     roles: ['customer', 'employee', 'anonymous'],
-  },
+  }, */
 ];
 
 const protectedRoutes = [
