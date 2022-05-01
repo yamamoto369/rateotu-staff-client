@@ -2,13 +2,13 @@ import APIClient from 'api/clients/base';
 import { buildUrl } from 'utils/api';
 
 const paths = {
-  JWT_CREATE: 'accounts/auth/jwt/create/',
-  USERS: 'accounts/users/',
-  USER_ACTIVATE: 'accounts/users/activation/',
-  USER_RESEND_ACTIVATION_EMAIL: 'accounts/users/resend_activation/',
-  USER_CHANGE_PASSWORD: 'accounts/users/set_password/',
-  USER_RESET_PASSWORD: 'accounts/users/reset_password/',
-  USER_RESET_PASSWORD_CONFIRM: 'accounts/users/reset_password_confirm/',
+  JWT_CREATE: 'emp/accounts/auth/jwt/create/',
+  USERS: 'emp/accounts/users/',
+  USER_ACTIVATE: 'emp/accounts/users/activation/',
+  USER_RESEND_ACTIVATION_EMAIL: 'emp/accounts/users/resend_activation/',
+  USER_CHANGE_PASSWORD: 'emp/accounts/users/set_password/',
+  USER_RESET_PASSWORD: 'emp/accounts/users/reset_password/',
+  USER_RESET_PASSWORD_CONFIRM: 'emp/accounts/users/reset_password_confirm/',
 }
 
 class AccountAPIClient {
