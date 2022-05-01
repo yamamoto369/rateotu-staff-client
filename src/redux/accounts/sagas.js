@@ -63,7 +63,7 @@ function* setCurrentAccount() {
       payload: {
         username: decoded.username,
         email: decoded.email,
-        role: decoded.role,
+        role: decoded.employee_role || 'anonymous',
         authorized: true,
         loading: false,
       },

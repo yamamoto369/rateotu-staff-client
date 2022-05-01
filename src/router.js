@@ -21,38 +21,45 @@ const publicRoutes = [
     path: '/accounts/login',
     component: loadable(() => import('pages/accounts/login')),
     exact: true,
-    roles: ['customer', 'employee', 'anonymous'],
+    roles: ['anonymous'],
   },
   /* {
     path: '/accounts/register',
     component: loadable(() => import('pages/accounts/register')),
     exact: true,
-    roles: ['customer', 'employee', 'anonymous'],
+    roles: ['anonymous'],
   },
   {
     path: '/accounts/register/completed',
     component: loadable(() => import('pages/accounts/register/completed')),
     exact: true,
-    roles: ['customer', 'employee', 'anonymous'],
+    roles: ['anonymous'],
   },
   {
     path: '/accounts/activate/:uid/:token',
     component: loadable(() => import('pages/accounts/activate')),
     exact: true,
-    roles: ['customer', 'employee', 'anonymous'],
+    roles: ['anonymous'],
   },
   {
     path: '/accounts/password/reset',
     component: loadable(() => import('pages/accounts/password/reset')),
     exact: true,
-    roles: ['customer', 'employee', 'anonymous'],
+    roles: ['anonymous'],
   },
   {
     path: '/accounts/password/reset/confirm/:uid/:token',
     component: loadable(() => import('pages/accounts/password/reset/confirm')),
     exact: true,
-    roles: ['customer', 'employee', 'anonymous'],
+    roles: ['anonymous'],
   }, */
+  // Permissions page (internal & external)
+  {
+    path: '/forbidden',
+    component: loadable(() => import('pages/403')),
+    exact: true,
+    roles: ['anonymous', 'waiter', 'chef', 'barman'],
+  },
 ];
 
 const protectedRoutes = [
@@ -60,14 +67,25 @@ const protectedRoutes = [
     path: '/dashboard',
     component: loadable(() => import('pages/dashboard')),
     exact: true,
-    roles: ['customer', 'employee'],
+    roles: ['waiter', 'chef', 'barman'],
   },
-  // Permissions (internal)
   {
-    path: '/forbidden',
-    component: loadable(() => import('pages/403')),
+    path: '/dashboard/waiter',
+    component: loadable(() => import('pages/dashboard/waiter')),
     exact: true,
-    roles: ['customer', 'employee'],
+    roles: ['waiter'],
+  },
+  {
+    path: '/dashboard/chef',
+    component: loadable(() => import('pages/dashboard/chef')),
+    exact: true,
+    roles: ['chef'],
+  },
+  {
+    path: '/dashboard/barman',
+    component: loadable(() => import('pages/dashboard/barman')),
+    exact: true,
+    roles: ['barman'],
   },
 ];
 
