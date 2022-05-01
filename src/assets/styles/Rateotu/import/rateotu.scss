@@ -27,9 +27,22 @@
 
 .ant-layout-sider-trigger {
   color: #ffffff;
-  background: #dd1d53;
+  background-color: #d38c23;
 }
 
-.ant-menu.ant-menu-dark .ant-menu-item-selected {
-    background: #dd1d53;
+.ant-menu-dark .ant-menu-submenu-title {
+  background-color: #d38c23;
+}
+
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: #d38c23;
+}
+
+.ant-menu-dark.ant-menu-vertical .ant-menu-submenu-title {
+  color: #ffffff;
+  background-color: #d38c23;
+}
+
+.ant-menu-light.ant-menu-vertical .ant-menu-submenu-title {
+  background-color: #e6f8ff;
 }
