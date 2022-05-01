@@ -5,8 +5,33 @@ export async function getLeftMenuData() {
       key: 'dashboard',
       url: '/dashboard',
       icon: 'fas fa-columns fa-lg',
-      hide: false,
-      roles: ['employee'],
+      roles: ['waiter', 'chef', 'barman'],
+      children: [
+        {
+          title: 'Waiters',
+          key: 'dashboard-waiter',
+          url: '/dashboard/waiter',
+          icon: 'fas fa-hand-holding-box fa-lg',
+          hide: false,
+          roles: ['waiter'],
+        },
+        {
+          title: 'Chefs',
+          key: 'dashboard-chef',
+          url: '/dashboard/chef',
+          icon: 'fas fa-hat-chef fa-lg',
+          hide: false,
+          roles: ['chef'],
+        },
+        {
+          title: 'Barmans',
+          key: 'dashboard-barman',
+          url: '/dashboard/barman',
+          icon: 'fas fa-cocktail fa-lg',
+          hide: false,
+          roles: ['barman'],
+        },
+      ],
     },
   ];
 }
@@ -17,7 +42,30 @@ export async function getTopMenuData() {
       key: 'dashboard',
       url: '/dashboard',
       icon: 'fas fa-columns fa-lg',
-      roles: ['employee'],
+      roles: ['waiter', 'chef', 'barman'],
+      children: [
+        {
+          title: 'Waiters',
+          key: 'dashboard-waiter',
+          url: '/dashboard/waiter',
+          icon: 'fas fa-hand-holding-box fa-lg',
+          roles: ['waiter'],
+        },
+        {
+          title: 'Chefs',
+          key: 'dashboard-chef',
+          url: '/dashboard/chef',
+          icon: 'fas fa-hat-chef fa-lg',
+          roles: ['chef'],
+        },
+        {
+          title: 'Barmans',
+          key: 'dashboard-barman',
+          url: '/dashboard/barman',
+          icon: 'fas fa-cocktail fa-lg',
+          roles: ['barman'],
+        },
+      ],
     },
   ];
 }
