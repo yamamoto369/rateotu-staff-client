@@ -108,3 +108,9 @@ export function renderOrderStatusTag(status) {
     );
   }
 }
+
+export function getNewOrderItemNotificationTitle(orderStatus) {
+  if (orderStatus === 'created') return 'Order Item Created'
+  if (orderStatus === 'ready') return 'Order Item Ready';
+  return 'Notification Title'
+}
