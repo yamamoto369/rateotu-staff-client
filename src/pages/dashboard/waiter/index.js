@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, message, Tooltip, Icon, notification } from 'antd';
+import { connect } from 'react-redux';
 import Loader from 'components/LayoutComponents/Loader';
 import OrderAPIClient from 'api/clients/orders';
 import OrderItemTable from 'components/RateotuComponents/OrderItemTable';
@@ -83,6 +84,13 @@ const columns = [
     render: (value) => moment(value).format('DD-MM-YYYY HH:mm:ss'),
   },
   {
+    title: 'Updated',
+    dataIndex: 'updatedAt',
+    defaultSortOrder: 'descend',
+    sorter: (a, b) => moment(a.createdAt).unix() - moment(b.createdAt).unix(),
+    render: (value) => moment(value).format('DD-MM-YYYY HH:mm:ss'),
+  },
+  {
     title: 'Image',
     dataIndex: 'item.imageUrl',
     render: (value) => (
@@ -98,6 +106,13 @@ const columns = [
   },
 ];
 
+const mapStateToProps = (state) => {
+  return {
+    newOrderItems: state.ws.notifications.newOrderItems,
+  };
+};
+
+@connect(mapStateToProps)
 class DashboardWaiter extends React.Component {
   state = {
     isLoading: {
@@ -111,6 +126,14 @@ class DashboardWaiter extends React.Component {
 
   componentDidMount() {
     this.fetchOrderItems();
+  }
+
+  componentDidUpdate(prevProps) {
+    // Wish I was able to use React hooks!!
+    // _.isEqual - expensive
+    if (this.props.newOrderItems.length !== prevProps.newOrderItems.length) {
+      this.fetchOrderItems();
+    }
   }
 
   fetchOrderItems = () => {
@@ -260,8 +283,7 @@ class DashboardWaiter extends React.Component {
                   !hasSelected ||
                   (workingOnTask &&
                     orders.some(
-                      (item) =>
-                        selectedRowKeys.includes(item.id) && item.orderStatus === 'serving',
+                      (item) => selectedRowKeys.includes(item.id) && item.orderStatus === 'serving',
                     )) ||
                   (workingOnTask && !hasSelected)
                 }
