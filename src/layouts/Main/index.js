@@ -3,6 +3,7 @@ import { BackTop, Layout } from 'antd'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import classNames from 'classnames'
+import WebsocketConnection from 'components/RateotuComponents/WebsocketConnection'
 import TopBar from 'components/LayoutComponents/TopBar'
 import Menu from 'components/LayoutComponents/Menu'
 import Footer from 'components/LayoutComponents/Footer'
@@ -30,32 +31,34 @@ class MainLayout extends React.PureComponent {
       isMenuTop,
     } = this.props
     return (
-      <Layout
-        className={classNames({
-          settings__borderLess: isBorderless,
-          settings__squaredBorders: isSquaredBorders,
-          settings__fixedWidth: isFixedWidth,
-          settings__menuShadow: isMenuShadow,
-          settings__menuTop: isMenuTop,
-        })}
-      >
-        <BackTop />
-        <Menu />
-        <Settings />
-        <Layout>
-          <Layout.Header>
-            <TopBar />
-          </Layout.Header>
-          <Layout.Content style={{ height: '100%', position: 'relative' }}>
-            <Breadcrumbs />
-            <div className="utils__content">{children}</div>
-          </Layout.Content>
-          <Layout.Footer>
-            <Footer />
-          </Layout.Footer>
+      <WebsocketConnection>
+        <Layout
+          className={classNames({
+            settings__borderLess: isBorderless,
+            settings__squaredBorders: isSquaredBorders,
+            settings__fixedWidth: isFixedWidth,
+            settings__menuShadow: isMenuShadow,
+            settings__menuTop: isMenuTop,
+          })}
+        >
+          <BackTop />
+          <Menu />
+          <Settings />
+          <Layout>
+            <Layout.Header>
+              <TopBar />
+            </Layout.Header>
+            <Layout.Content style={{ height: '100%', position: 'relative' }}>
+              <Breadcrumbs />
+              <div className="utils__content">{children}</div>
+            </Layout.Content>
+            <Layout.Footer>
+              <Footer />
+            </Layout.Footer>
+          </Layout>
         </Layout>
-      </Layout>
-    )
+      </WebsocketConnection>
+    );
   }
 }
 
