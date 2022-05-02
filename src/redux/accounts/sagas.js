@@ -39,7 +39,7 @@ function* login({ credentials }) {
     yield setAuthTokens(access, refresh);
     yield put(loginSuccess());
     yield put(loadCurrentAccount());
-    notification.success({
+    yield notification.success({
       message: 'Logged In',
       description: 'You have successfully logged in!',
     })
@@ -92,7 +92,6 @@ function* logout() {
       loading: false,
     },
   });
-  yield put({ type: 'CART/RESET_CART' });
   yield call(deleteEventListeners);
   yield history.push('/accounts/login');
 }
