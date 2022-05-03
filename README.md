@@ -1,7 +1,5 @@
 # 🏕️ RATEOTU Employee Client
 
-![projectdescimg](https://user-images.githubusercontent.com/25624642/161682024-30820bb0-2252-4c05-9508-cafc4e621416.png)
-
 ## 📝 Overview
 
 ![auth-registration](https://user-images.githubusercontent.com/25624642/166401575-8c132560-3939-40d4-998d-17d14aff009a.gif)
