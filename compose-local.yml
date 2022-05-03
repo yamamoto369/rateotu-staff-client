@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/local/node/Dockerfile
+    image: local_employee_client_frontend
+    ports:
+      - "3005:3005"
+    restart: unless-stopped
+    env_file:
+      - ./.envs/.local/.node
+    volumes:
+      - ".:/app"
+      # This is a workaround to prevent host node_modules from accidently getting mounted in container.
+      # In case you want to use node/npm both outside container for intellisense/lint etc. and also inside container
+      # This will overwrite the default node_modules dir in container so it won't conflict with /app/node_modules.
+      - node_modules_employee_client:/app/node_modules
+    networks:
+      - local_employee_client
+      - local_server_employee_client
+    command: npm run start
+
+volumes:
+  node_modules_employee_client: {}
+networks:
+  local_employee_client:
+    name: local_employee_client
+    driver: bridge
+  local_server_employee_client:
+    external: true
