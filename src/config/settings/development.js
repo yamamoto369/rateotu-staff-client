@@ -1,4 +1,4 @@
 
 export * from './base';
-export const BACKEND_API_BASE = 'http://localhost:8000/api/';
+export const BACKEND_API_BASE = process.env.REACT_APP_DJANGO_API_BASE;
 
