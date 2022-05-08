@@ -293,7 +293,7 @@ class DashboardBarman extends React.Component {
             >
               <Icon type="info-circle" />
             </Tooltip>
-            Order status
+            Order Status
           </span>
         ),
         dataIndex: 'orderStatus',
@@ -306,7 +306,7 @@ class DashboardBarman extends React.Component {
         render: (value) => renderOrderStatusTag(value),
       },
       {
-        title: 'Payment status',
+        title: 'Payment Status',
         dataIndex: 'paymentStatus',
         filters: [
           { text: 'Pending', value: 'pending' },

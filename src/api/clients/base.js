@@ -145,7 +145,7 @@ class APIClient {
   static forceLogout() {
     removeAuthTokens();
     reduxStore.dispatch({
-      type: 'USER/SET_STATE',
+      type: 'user/SET_STATE',
       payload: {
         username: '',
         role: 'anonymous',

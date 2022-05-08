@@ -32,7 +32,7 @@ class DashboardWaiter extends React.Component {
 
   componentDidMount() {
     this.fetchOrderItems();
-  }
+  };
 
   componentDidUpdate(prevProps) {
     // Wish I was able to use React hooks!!
@@ -40,7 +40,7 @@ class DashboardWaiter extends React.Component {
     if (this.props.newOrderItems.length !== prevProps.newOrderItems.length) {
       this.fetchOrderItems();
     }
-  }
+  };
 
   fetchOrderItems = () => {
     const queryParams = {
@@ -287,7 +287,7 @@ class DashboardWaiter extends React.Component {
             >
               <Icon type="info-circle" />
             </Tooltip>
-            Order status
+            Order Status
           </span>
         ),
         dataIndex: 'orderStatus',
@@ -300,7 +300,7 @@ class DashboardWaiter extends React.Component {
         render: (value) => renderOrderStatusTag(value),
       },
       {
-        title: 'Payment status',
+        title: 'Payment Status',
         dataIndex: 'paymentStatus',
         filters: [
           { text: 'Pending', value: 'pending' },
