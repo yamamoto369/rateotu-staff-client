@@ -262,6 +262,7 @@ class DashboardChef extends React.Component {
         title: 'Name',
         dataIndex: 'item.name',
         sorter: (a, b) => a.item.name.length - b.item.name.length,
+        render: (value) => `${value.substring(0, 15)}..`,
       },
       {
         title: 'Quantity',

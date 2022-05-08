@@ -315,7 +315,7 @@ class Dashboard extends React.Component {
                 </div>
                 <div>
                   <Tabs defaultActiveKey="1">
-                    <TabPane tab="Last Orders" key="1">
+                    <TabPane tab="Last Order Items" key="1">
                       <Table
                         className="utils__scrollTable"
                         scroll={{ x: '100%' }}
