@@ -114,3 +114,11 @@ export function getNewOrderItemNotificationTitle(orderStatus) {
   if (orderStatus === 'ready') return 'Order Item Ready';
   return 'Notification Title'
 }
+
+export function renderDefaultBooleanStatusTag(value) {
+  return value ? (
+    <Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" />
+  ) : (
+    <Icon type="close-circle" theme="twoTone" twoToneColor="#de4c4d" />
+  );
+}
