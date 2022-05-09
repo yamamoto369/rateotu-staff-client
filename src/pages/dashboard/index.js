@@ -222,7 +222,7 @@ class Dashboard extends React.Component {
       },
       {
         title: 'Avl Seat Cap',
-        dataIndex: 'seatCapacity',
+        dataIndex: 'availableSeatCapacity',
       },
       {
         title: 'Order Served',

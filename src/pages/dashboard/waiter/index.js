@@ -315,7 +315,6 @@ class DashboardWaiter extends React.Component {
       {
         title: 'Created',
         dataIndex: 'createdAt',
-        defaultSortOrder: 'descend',
         sorter: (a, b) => moment(a.createdAt).unix() - moment(b.createdAt).unix(),
         render: (value) => moment(value).format('DD-MM-YYYY HH:mm:ss'),
       },
@@ -323,7 +322,7 @@ class DashboardWaiter extends React.Component {
         title: 'Updated',
         dataIndex: 'updatedAt',
         defaultSortOrder: 'descend',
-        sorter: (a, b) => moment(a.createdAt).unix() - moment(b.createdAt).unix(),
+        sorter: (a, b) => moment(a.updatedAt).unix() - moment(b.updatedAt).unix(),
         render: (value) => moment(value).format('DD-MM-YYYY HH:mm:ss'),
       },
       {
